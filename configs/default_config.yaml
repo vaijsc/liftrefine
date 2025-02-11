@@ -1,0 +1,50 @@
+---
+defaults:
+  - _self_
+
+logdir: exp_viewset
+name: test
+hydra:
+  run:
+    dir: ${logdir}/${name}
+
+
+lr: 0.00005
+random_seed: 0
+devices: 1
+batch_size: 8
+num_workers: 16
+num_steps: 500010
+test_steps: 200
+
+logging_every: 100
+summary_every: 2000
+eval_every: 20000
+save_every: 1000
+checkpoint_path: null
+pretrained_reconstructor: null
+resume: False
+
+test_dir: /home/ubuntu/kt/khatran/evaluation/deterministic_viewset
+dataset_name: test
+test_ema: False
+num_test_views: 3
+
+
+optimization:
+  betas:
+  - 0.9
+  - 0.99
+  ema:
+    update_every: 10
+    decay: 0.995
+
+  loss: 'l2'
+  constant_lr: false
+  lpips_weight: null
+  rendered_weight: null
+  use_resnet: null
+  diffusion_cfg: null
+  classifier_free_guidance: null
+
+

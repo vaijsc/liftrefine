@@ -1,0 +1,41 @@
+# @package _global_
+model:
+  feature_extractor_2d:
+    use: false
+  volume_size: 32
+  explicit_volume: true
+  explicit_rendering: true
+  unet:
+    volume_repr: lrm
+    self_condition: true
+    self_condition_images: seen
+    self_condition_detach: true
+    input_dim: 3
+    model_channels: 128
+    plane_channels: 16
+    plane_hidden_channels: 8
+    attention_aggregation: true
+    blocks_per_res: 2  
+    channel_mult:
+    - 1
+    - 2
+    - 4
+    - 8
+    attn_resolutions:
+    - 16
+    - 8
+    - 4
+
+data:
+  no_imgs_per_example: 2
+
+optimization:
+  use_resnet: true
+  diffusion_cfg: null
+  
+  constant_lr: false
+  rendered_weight: 0.0
+  lpips_weight: 0.2
+
+lr: 0.00005
+batch_size: 4

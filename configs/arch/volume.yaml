@@ -1,0 +1,45 @@
+# @package _global_
+model:
+  hidden_dim: 64
+  n_heads: 1
+  feature_extractor_2d:
+    pass_features: both
+    use: true
+    res_blocks: 2
+
+  input_dim: 3
+  use_depth: false
+  volume_size: 16
+  explicit_volume: false
+  explicit_rendering: false
+  unet:
+    volume_repr: voxel
+    input_dim: 512
+    model_channels: 64
+    volume_out_channels: 32
+    attention_aggregation: true
+    blocks_per_res: 2
+    channel_mult:
+    - 1
+    - 2
+    - 4
+    - 8
+    attn_resolutions:
+    - 16
+    - 8
+    - 4
+
+data:
+  novel_view_weight: 0.2
+  no_imgs_per_example: 4
+
+optimization:
+  use_resnet: true
+  diffusion_cfg: null
+  
+  constant_lr: false
+  rendered_weight: 0.0
+  lpips_weight: 0.2
+
+lr: 0.00005
+batch_size: 16

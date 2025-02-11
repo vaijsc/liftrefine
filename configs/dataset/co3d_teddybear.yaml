@@ -1,0 +1,42 @@
+# @package _global_
+render:
+  aspect_ratio: 1
+  fov: 15.0
+  max_depth: 7.5
+  min_depth: 0.0001
+  n_pts_per_ray: 96
+  stratified_sampling: true
+  volume_extent_world: 1.2
+  volume_size: 32
+  zfar: 10.0
+  znear: 0.1
+  post_activation: true
+  raw_noise_std: 0.0
+  n_pts_per_ray_fine: 32
+  volume_size_mults:
+  - 1.0
+  - 1.0
+  - 1.0
+  volume_offsets:
+  - 0.0
+  - 0.0
+  - 0.0
+
+data:
+  use_diffusion: false
+  split_idx: -1
+  background: false
+  encode_pose: true
+  encode_rays: true
+  translation_augmentation: false
+  rotation_augmentation: false
+  dataset_type: co3d
+  path: ../../data/CO3D_viewset_256
+  input_size:
+  - 128
+  - 128
+  category: 
+  - teddybear
+  sequence_idx: None
+  white_background: false
+  no_imgs_per_example: 4

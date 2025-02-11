@@ -1,0 +1,44 @@
+# @package _global_
+render:
+  aspect_ratio: 1
+  fov: 51.98948897809546
+  max_depth: 1.8
+  min_depth: 0.8
+  n_pts_per_ray: 64
+  stratified_sampling: true
+  volume_extent_world: 1.0
+  volume_size: 64
+  zfar: 1.8
+  znear: 0.8
+  post_activation: true
+  raw_noise_std: 0.0
+  n_pts_per_ray_fine: 64
+  volume_size_mults:
+  - 0.7
+  - 1.0
+  - 0.6
+  volume_offsets:
+  - 0.0
+  - 0.0
+  - 0.0
+
+data:
+  spherical_poses: false
+  background: white
+  encode_pose: true
+  encode_rays: true
+  translation_augmentation: 0.0
+  rotation_augmentation: false
+  always_drop_at_least_one_view: true
+  two_training_imgs_per_example: false
+  one_training_img_per_example: false
+  dataset_type: srn
+  input_size:
+  - 128
+  - 128
+  path: ../../data/shapenet
+  category: 
+  - cars
+  normalize_pose: true
+  white_background: true
+  no_imgs_per_example: 4

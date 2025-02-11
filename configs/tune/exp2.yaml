@@ -1,0 +1,45 @@
+# @package _global_
+model:
+  hidden_dim: 64
+  n_heads: 1
+  feature_extractor_2d:
+    pass_features: both
+    use: true
+    res_blocks: 2
+    
+  input_dim: 3
+  use_depth: true
+  volume_size: 16
+  explicit_volume: true
+  explicit_rendering: true
+  unet:
+    volume_repr: votri
+    input_dim: 256
+    model_channels: 64
+    attention_aggregation: true
+    blocks_per_res: 2
+    channel_mult:
+    - 1
+    - 2
+    - 4
+    - 8
+    attn_resolutions:
+    - 8
+    - 4
+    - 2
+    volume_out_channels: 16
+    plane_channels: 16
+    plane_hidden_channels: 8
+    votri_channel_mult:
+    - 1
+    - 2
+    - 4
+    - 8
+    - 16
+
+optimization:
+  recons_weight: 1.0
+  novel_weight: 0.05
+  lpips_weight: 0.2
+  
+  diffusion_cfg: "zero123_configs/sd-objaverse-finetune-c_concat-256.yaml"

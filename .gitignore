@@ -1,0 +1,43 @@
+# Editors
+.vscode/
+.idea/
+
+# Vagrant
+.vagrant/
+
+# Mac/OSX
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Source for the following rules: https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.swp
+
+# Custom
+checkpoints/
+visuals/
+logs/
+logs*/
+test*/
+exp_*/
+run_co3d.sh
+run_zero123.sh
+run_shapenet.sh
+run_diffusion.sh
+run_singlestage.sh
+run_shapenet_finetune.sh
+run_deterministic.sh
+evaluate_shapenet.sh
+calc_metrics.sh
+debug.sh
+eval.sh
+*.pt
+
+CLIP
+taming-transformers
+facebook
